@@ -1,0 +1,7 @@
+= form_for @profile do |f|
+  %fieldset
+    = f.label :display_name
+    = f.text_field :display_name
+
+  %fieldset
+    = f.submit "Submit"
