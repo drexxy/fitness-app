@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FitnessApp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    %header
+      .grid
+        %h1.col.col-1-of-2 Fitness Faster
+        %nav.col.col-1-of-2
+          %ol
+            %li
+              = link_to "Your Profile", profile_path(1)
+    = yield

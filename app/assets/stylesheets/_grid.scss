@@ -1,0 +1,36 @@
+$max-width: 1280;
+$cols: 2,3,4;
+$guttering: 20;
+  
+.grid {
+  max-width: #{$max-width + "px"};
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  .col {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  @each $col in $cols {
+    @for $i from 1 to $col {
+      .col-#{$i}-of-#{$col} {
+        width: #{(($max-width / $col * $i)-$guttering)-5}px;
+      }
+    }
+  }
+}
+
+.both-gutter {
+  margin-left: #{$guttering / 2}px;
+  margin-right: #{$guttering / 2}px;
+}
+
+.left-gutter {
+  margin-left: #{$guttering}px;
+}
+
+.right-gutter { 
+  margin-right: #{$guttering}px;
+}

@@ -1,0 +1,20 @@
+header{
+  background-color: #3E67C7;
+  text-align: center;
+  height: 50px;
+
+  h1 {
+    font-size: 2rem;
+    display: inline-block;
+  }
+
+  nav{
+    ol {
+      list-style: none;
+      display: inline-block;
+      li {
+        display: inline-block;
+      }
+    }
+  } 
+}
