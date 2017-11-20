@@ -45,12 +45,12 @@ Feature: Profile
       And They are redirected to their profile page
       And They see their level of experience listed
 
-    Scenario: A customer uploads a picture of themselves
+    Scenario: A customer states their weight in Kg
     Given They are on the new profile page
       And They have filled out all required fields
-      And They upload a picture of themselves
+      And They fill in their weight
     When They submit the new form
     Then Their profile is created
       And They are redirected to their profile page
-      And They see their picture on their profile page
-               
+      And They see their weight listed
+

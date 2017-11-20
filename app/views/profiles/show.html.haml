@@ -29,3 +29,12 @@
         - else
           You haven't set your experience yet. Change that here:
           = link_to "Edit your profile"
+      %dd
+        Weight:
+      %dt
+        - if @profile.weight
+          = @profile.weight
+        - else
+          You haven't set your weight yet. Change that here:
+          = link_to "Edit your profile"
+

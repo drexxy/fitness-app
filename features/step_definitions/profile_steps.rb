@@ -65,10 +65,10 @@ Then("They see their level of experience listed") do
   expect(page).to have_content("Experience: Intermediate")
 end
 
-Given("They upload a picture of themselves") do
-  pending # Write code here that turns the phrase above into concrete actions
+Given("They fill in their weight") do
+  fill_in "Weight in Kg", with: 100.2
 end
 
-Then("They see their picture on their profile page") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("They see their weight listed") do
+  expect(page).to have_content("Weight: 100.2")
 end

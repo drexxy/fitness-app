@@ -11,11 +11,14 @@
     = f.label :goal_id
     = f.select :goal_id, Goal.all.map { |goal| [goal.name, goal.id] }
   %fieldset
+    = f.label :weight, "Weight in Kg"
+    = f.text_field :weight
+  %fieldset
     = f.label :days, "How many days a week will you train?"
     = f.select :days, [3, 4, 5]
   %fieldset
     = f.label :experience, "Level of experience"
-    = f.select :experience, ["Beginner", "Intermediate", "Expert"]   
+    = f.select :experience, ["Beginner", "Intermediate", "Expert"]
 
   %fieldset
     = f.submit "Submit"

@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create(profile_params)
+    @profile = Profile.create!(profile_params)
     unless @profile.id == nil
       redirect_to profile_path(@profile.id)
     else
@@ -26,7 +26,8 @@ class ProfilesController < ApplicationController
       :display_name,
       :goal_id,
       :days,
-      :experience
+      :experience,
+      :weight
       )
   end
 
