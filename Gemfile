@@ -16,7 +16,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'cucumber-rails'
   gem 'database_cleaner'
 end
 
@@ -30,6 +29,7 @@ end
 group :test do
   gem 'rack_session_access'
   gem 'rspec-expectations'
+  gem 'cucumber-rails', :require => false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
