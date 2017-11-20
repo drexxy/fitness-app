@@ -1,24 +1,31 @@
-%h2 Create a Profile
+.profile-form.grid
+  %h2 Create a Profile
 
-= render "errors", locals: {model: @profile}
+  .col.col-1-of-2    
+    = render "errors", locals: {model: @profile}
 
-= form_for @profile do |f|
+    = form_for @profile do |f|
 
-  %fieldset
-    = f.label :display_name
-    = f.text_field :display_name
-  %fieldset
-    = f.label :goal_id
-    = f.select :goal_id, Goal.all.map { |goal| [goal.name, goal.id] }
-  %fieldset
-    = f.label :weight, "Weight in Kg"
-    = f.text_field :weight
-  %fieldset
-    = f.label :days, "How many days a week will you train?"
-    = f.select :days, [3, 4, 5]
-  %fieldset
-    = f.label :experience, "Level of experience"
-    = f.select :experience, ["Beginner", "Intermediate", "Expert"]
+      %fieldset
+        = f.label :display_name
+        = f.text_field :display_name
+      %fieldset
+        = f.label :goal_id
+        = f.select :goal_id, Goal.all.map { |goal| [goal.name, goal.id] }
+      %fieldset
+        = f.label :weight, "Weight in Kg"
+        = f.text_field :weight
+      %fieldset
+        = f.label :days, "How many days a week will you train?"
+        = f.select :days, ["", 3, 4, 5]
+      %fieldset
+        = f.label :experience, "Level of experience"
+        = f.select :experience, ["","Beginner", "Intermediate", "Expert"]
 
-  %fieldset
-    = f.submit "Submit"
+      %fieldset
+        = f.submit "Submit"
+
+  .col.col-1-of-2.form-information
+
+    %p
+      All profile information is private unless you choose to share it. It is only used for filtering workout results

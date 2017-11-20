@@ -7,11 +7,11 @@ class Profile < ApplicationRecord
   format: { with: /\A[a-zA-Z0-9]*\z/,
   message: "only allows letters and numbers" } 
   )
-  validates :days, numericality: true
-  
-  validates :weight, numericality: { greater_than: 0 }
+  validates :days, numericality: true, allow_nil: true
 
-  validates_inclusion_of :experience, :in => ["Beginner", "Intermediate", "Expert"]
+  validates :weight, numericality: { greater_than: 0 }, allow_nil: true
+
+  validates_inclusion_of :experience, :in => ["", "Beginner", "Intermediate", "Expert"]
 
   mount_uploader :profile_picture, ProfilePictureUploader
 

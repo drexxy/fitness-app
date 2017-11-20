@@ -1,0 +1,29 @@
+.profile-form {
+
+  margin-top: 30px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  form {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 1.5rem;
+
+    fieldset {
+      margin-top: 20px;
+    }
+
+    #profile_weight {
+      width: 40px;
+    }
+  }
+
+  .form-information {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+}
