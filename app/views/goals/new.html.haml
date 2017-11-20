@@ -1,0 +1,8 @@
+%h2 Add a Goal
+= form_for @goal do |f|
+  %fieldset
+    = f.label :name
+    = f.text_field :name
+
+  %fieldset
+    =f.submit "Submit"

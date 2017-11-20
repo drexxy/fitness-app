@@ -5,3 +5,12 @@
         Name:
       %dt 
         = @profile.display_name
+      %dd
+        Goal:
+      %dt
+        - if @profile.goal
+          = @profile.goal.name
+        - else
+          You haven't chosen a Goal yet. Set one here:
+          = link_to "Set a Goal!"
+    

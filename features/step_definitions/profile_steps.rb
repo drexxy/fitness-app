@@ -36,3 +36,15 @@ Then("they are shown an error message stating the problem") do
   expect(page).to have_content("Display name is too short")
 end
 
+Given("There are some goals") do
+  Goal.create!(name: "Lose weight")
+  Goal.create!(name: "Put on muscle")
+end
+
+Given("They select a goal from the drop down menu") do
+  select "Put on muscle", from: "Goal" 
+end
+
+Then("They see thier goal") do
+  expect(page).to have_content("Put on muscle")
+end

@@ -7,4 +7,6 @@ class Profile < ApplicationRecord
   format: { with: /\A[a-zA-Z0-9]*\z/,
   message: "only allows letters and numbers" } 
   )
+
+  belongs_to :goal, optional: true
 end

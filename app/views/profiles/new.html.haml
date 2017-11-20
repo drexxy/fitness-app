@@ -8,4 +8,8 @@
     = f.text_field :display_name
 
   %fieldset
+    = f.label :goal_id
+    = f.select :goal_id, Goal.all.map { |goal| [goal.name, goal.id] }    
+
+  %fieldset
     = f.submit "Submit"
