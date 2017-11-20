@@ -31,6 +31,7 @@ end
 
 group :test do
   gem 'rack_session_access'
+  gem 'rspec-expectations'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
