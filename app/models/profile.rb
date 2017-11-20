@@ -9,5 +9,7 @@ class Profile < ApplicationRecord
   )
   validates :days, numericality: true
 
+  mount_uploader :profile_picture, ProfilePictureUploader
+  
   belongs_to :goal, optional: true
 end

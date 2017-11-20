@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120184801) do
+ActiveRecord::Schema.define(version: 20171120190356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171120184801) do
     t.integer "goal_id"
     t.integer "days"
     t.string "experience"
+    t.string "profile_picture"
   end
 
 end
