@@ -24,7 +24,9 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(
       :display_name,
-      :goal_id
+      :goal_id,
+      :days,
+      :experience
       )
   end
 

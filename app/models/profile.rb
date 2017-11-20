@@ -7,6 +7,7 @@ class Profile < ApplicationRecord
   format: { with: /\A[a-zA-Z0-9]*\z/,
   message: "only allows letters and numbers" } 
   )
+  validates :days, numericality: true
 
   belongs_to :goal, optional: true
 end

@@ -48,3 +48,27 @@ end
 Then("They see thier goal") do
   expect(page).to have_content("Put on muscle")
 end
+
+Given("They select the number of days they train") do
+  select "4", from: "How many days a week will you train?"
+end
+
+Then("They see the number of days listed") do
+  expect(page).to have_content("Days per week: 4")
+end
+
+Given("They select their level of experience") do
+  select "Intermediate", from: "Level of experience"
+end
+
+Then("They see their level of experience listed") do
+  expect(page).to have_content("Experience: Intermediate")
+end
+
+Given("They upload a picture of themselves") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("They see their picture on their profile page") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
