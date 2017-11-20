@@ -22,3 +22,17 @@ end
 Then("They are redirected to their profile page") do
   expect(page).to have_content("Name: Ben123")
 end
+
+Given("They have filled out the username field with an invalid name") do
+  fill_in "Display name", with: "Ben$"
+end
+
+Then("They are returned to the new profile page") do
+  expect(page).to have_content("Create a Profile")
+end
+
+Then("they are shown an error message stating the problem") do
+  expect(page).to have_content("Display name only allows letters and numbers")
+  expect(page).to have_content("Display name is too short")
+end
+

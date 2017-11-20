@@ -1,12 +1,18 @@
 class ProfilesController < ApplicationController
 
   def new
-    @profile = Profile.new
+    unless @profile
+      @profile = Profile.new
+    end
   end
 
   def create
     @profile = Profile.create(profile_params)
-    redirect_to profile_path(@profile.id)
+    unless @profile.id == nil
+      redirect_to profile_path(@profile.id)
+    else
+      render action: :new
+    end
   end
 
   def show

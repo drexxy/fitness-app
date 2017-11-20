@@ -1,3 +1,7 @@
+%h2 Create a Profile
+
+= render "errors", locals: {model: @profile}
+
 = form_for @profile do |f|
   %fieldset
     = f.label :display_name
