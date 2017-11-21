@@ -33,6 +33,7 @@ group :test do
   gem 'rspec-expectations'
   gem 'cucumber-rails', :require => false
   gem 'launchy'
+  gem 'rspec-rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
