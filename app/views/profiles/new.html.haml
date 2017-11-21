@@ -1,8 +1,8 @@
-.profile-form.grid
+.form.grid
   %h2 Create a Profile
 
   .col.col-1-of-2    
-    = render "errors", locals: {model: @profile}
+    = render "shared/errors", locals: {model: @profile}
 
     = form_for @profile do |f|
 

@@ -1,0 +1,31 @@
+.page-header {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.link-headers {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.exercise {
+  height: 50px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition-duration: 0.5s;
+
+  h3, h4, h5 {
+    margin-top: 10px;
+    color: black;
+  }
+}
+
+.exercise:hover {
+  background-color: #8AA6E5;
+}

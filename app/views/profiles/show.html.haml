@@ -1,7 +1,6 @@
 .grid
 
   .col.col-1-of-2.both-gutter
-    -binding.pry
     - unless @profile.profile_picture.url == nil
       = image_tag @profile.profile_picture.url
     - else

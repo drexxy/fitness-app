@@ -1,0 +1,24 @@
+.grid.form
+  %h2
+    Add an exercise
+    
+    = render "shared/errors", locals: {model: @exercise}
+
+    = form_for @exercise do |f|
+
+      %fieldset
+        = f.label :name
+        = f.text_field :name
+      %fieldset
+        = f.label :muscle_group
+        = f.select :muscle_group, ["Chest", "Back", "Legs", "Shoulders", "Arms", "Abdominals"]
+      %fieldset
+        = f.label :description
+        = f.text_area :description, size: "80x10"
+      %fieldset
+        = f.label "Compound" 
+        = f.radio_button :category, "Compound"
+        = f.label "Isolation" 
+        = f.radio_button :category, "Isolation"
+      %fieldset
+        = f.submit "Submit"
