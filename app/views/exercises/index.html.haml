@@ -11,3 +11,20 @@
 
 .grid
   =render @exercises
+
+#page-change.grid
+  .next-prev.col.col-1-of-2
+    - unless @prev_page == 0
+      = link_to 'Prev', exercises_path(page: @prev_page, limit: @limit), id: "prev-link"
+
+    - (1..@final_page).each do |i| 
+      = link_to "#{i}", exercises_path(page: i, limit: @limit), class: ("selected" if @page == i)
+
+    - unless @next_page == @final_page + 1 
+      = link_to 'Next', exercises_path(page: @next_page, limit: @limit), id: "next-link"
+
+  .pagination.col.col-1-of-2
+    = link_to '10', exercises_path(limit: 10), class: ("selected" if @limit == 10)
+    = link_to '20', exercises_path(limit: 20), class: ("selected" if @limit == 20)
+    %p
+      exercises per page

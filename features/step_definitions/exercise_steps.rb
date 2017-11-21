@@ -40,3 +40,36 @@ end
 Then("they are shown an error message") do
   expect(page).to have_content("Name has already been taken")
 end
+
+Given("there are some exercises") do
+  20.times do Exercise.create!(
+    name: "#{rand(1..10000)}",
+    muscle_group: "Chest",
+    description: "Lift the big weight",
+    category: "Compound")
+  end 
+end
+
+When("a visitor is on the exercise index page") do
+  visit exercises_path
+end
+
+Then("they see a paginated list of exercises") do
+  expect(page).to have_selector('.exercise', count: 10)
+end
+
+When("they click on page {int}") do |int|
+  within(".next-prev") { click_on "#{int}" }
+end
+
+Then("they see another {int} exercises") do |int|
+  expect(page).to have_selector('.exercise', count: 10)
+end
+
+When("they click on {int} exercises per page") do |int|
+  within(".pagination") { click_on "#{int}" }
+end
+
+Then("they see a list of {int} exercises") do |int|
+  expect(page).to have_selector('.exercise', count: 20)
+end
