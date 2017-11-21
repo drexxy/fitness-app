@@ -1,0 +1,26 @@
+#page-change {
+  margin-top: 10px;
+
+  a{
+    border: 1px solid black;
+    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+
+  a:hover {
+    background-color: #8AA6E5; 
+  }
+
+  #prev-link, #next-link {
+    width: 60px;
+  }
+
+  p{
+    display: inline-block;
+  }
+}
