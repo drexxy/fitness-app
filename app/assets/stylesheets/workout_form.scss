@@ -1,0 +1,44 @@
+.workout-list {
+  form {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin-top: 20px;
+    fieldset {
+      display: inline-block;
+      text-align: left;
+      width: 75%;
+      border: 1px solid black;
+      padding: 20px;
+      h4 {
+        font-size: 1.5rem;
+        display: inline-block;
+        width: 25%;
+      }
+      span {
+        width: 20%;
+        font-size: 1.5rem;
+        margin-left: 30px;
+        input {
+          width: 50px;
+          margin-left: 20px;
+        }
+      }
+    }
+
+  }
+}
+
+.exercise-list {
+  ol {
+    text-align: left;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    li{
+      border: 1px solid black;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+    }
+  }
+
+}

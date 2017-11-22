@@ -33,7 +33,15 @@ describe("ExerciseList", function(){
       expect(container.find('ol').childAt(1).text()).toEqual("Deadlifts");
       expect(container.find('ol').childAt(2).text()).toEqual("Squats");
     })
+    
+    describe("adding an exercise to the workout", function(){
+      beforeEach(() => {
+        container.find('ol').childAt(0).simulate("click");
+      });
+
+    })
   });
+
 
 
 });

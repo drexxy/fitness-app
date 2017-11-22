@@ -1,5 +1,9 @@
 class Exercise < ApplicationRecord
 
+  has_many :set_exercises
+
+  has_many :days, through: :set_exercises
+
   validates(
   :name,
   uniqueness: true

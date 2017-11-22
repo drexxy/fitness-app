@@ -14,11 +14,11 @@ class ExerciseList extends Component {
       <ol>
         {
           this.state.exercises.map((exercise, i) => {
-            return <li key = {i} >{ exercise.name }</li>
+            return <li key={i} onClick={() => this.props.handleClick(i) } >{ exercise.name }</li>
           })
         }
       </ol>
-      )
+    )
   }
 
 }
