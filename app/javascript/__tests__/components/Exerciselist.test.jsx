@@ -13,9 +13,9 @@ describe("ExerciseList", function(){
 
   beforeEach(() => {
     exercises = [
-      {name: "Bench Press", muscleGroup: "Chest" },
-      {name: "Deadlifts", muscleGroup: "Back" },
-      {name: "Squats", muscleGroup: "Legs" },
+      {"name": "Bench Press", "muscleGroup": "Chest" },
+      {"name": "Deadlifts", "muscleGroup": "Back" },
+      {"name": "Squats", "muscleGroup": "Legs" },
       ];
   });
 
@@ -33,25 +33,7 @@ describe("ExerciseList", function(){
       expect(container.find('ol').childAt(1).text()).toEqual("Deadlifts");
       expect(container.find('ol').childAt(2).text()).toEqual("Squats");
     })
-
-    describe("editing a question", function() {
-      beforeEach(() => {
-        container.find('ol').childAt(0).simulate("click");
-      });
-
-      it("replaces the contents of the li with an input box", () => {
-       let inputBox = container.find('ol').childAt(0).find('input');
-       expect(inputBox.length).toEqual(1);
-       expect(inputBox.props().defaultValue).toEqual("What is ES6?")
-      });
-    })
-
-    describe("adding a question", function(){
-      it("adds a new question to the ol of questions", () => {
-        expect(container.find('li').length).toEqual(3);
-        expect(container.find('ol').childAt(0).text()).toEqual("What is ES6?");
-      })
-    });
   });
+
 
 });

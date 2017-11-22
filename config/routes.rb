@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :goals, only: [:new, :create]
 
   resources :exercises, only: [:new, :create, :show, :index]
+
+  resources :workouts, only: [:new]
 end
