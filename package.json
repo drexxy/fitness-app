@@ -1,5 +1,23 @@
 {
   "name": "fitness-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^14.5.0",
+    "coffeescript": "1.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react_ujs": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^16.1.1",
+    "webpack-dev-server": "^2.9.4"
+  }
 }
