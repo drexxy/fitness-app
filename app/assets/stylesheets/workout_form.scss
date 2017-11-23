@@ -22,8 +22,12 @@
           margin-left: 20px;
         }
       }
+      span:last-child {
+        input { 
+          width: 100px;
+        }
+      }
     }
-
   }
 }
 

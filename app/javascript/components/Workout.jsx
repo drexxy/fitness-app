@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WorkoutForm from './Workoutform'
 import ExerciseList from './Exerciselist'
+import 'babel-polyfill';
 
 class Workout extends Component {
 
@@ -13,7 +14,6 @@ class Workout extends Component {
   }
 
   handleClick(i){
-    console.log(this)
     this.state.selected.push(this.props.exercises[i])
     this.setState({
       selected: this.state.selected

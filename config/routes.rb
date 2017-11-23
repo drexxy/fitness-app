@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
   
   resources :profiles, only: [:new, :create, :show]
 
@@ -8,5 +6,7 @@ Rails.application.routes.draw do
 
   resources :exercises, only: [:new, :create, :show, :index]
 
-  resources :workouts, only: [:new]
+  resources :workouts, only: [:new, :create]
+
+  resources :days, only: [:new, :create]
 end

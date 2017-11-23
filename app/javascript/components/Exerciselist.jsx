@@ -4,6 +4,7 @@ class ExerciseList extends Component {
 
   constructor(props){
     super(props);
+    
     this.state = {
       exercises: this.props.exercises || [],
     }

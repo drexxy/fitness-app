@@ -5,4 +5,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new
   end
 
+  def create
+  end
+
 end
