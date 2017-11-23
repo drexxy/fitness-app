@@ -1,0 +1,33 @@
+.form.grid
+  %h2 Create a Trainer Profile
+
+  .col.col-1-of-2
+    = form_for @trainer_profile do |f|
+      %fieldset
+        = f.label :name
+        = f.text_field :name
+      %fieldset
+        = f.label :gym_name
+        = f.text_field :gym_name
+      %fieldset
+        = f.label :gym_postcode
+        = f.text_field :gym_postcode
+      %fieldset
+        = f.label :years_experience
+        = f.text_field :years_experience
+      %fieldset
+        = f.label :qualification
+        = f.text_field :qualification
+      %fieldset
+        = f.label :rate
+        = f.text_field :rate
+      %fieldset
+        = f.label :bio
+        = f.text_area :bio
+      %fieldset
+        = f.submit "Submit"
+
+  .col.col-1-of-2.form-information
+
+    %p
+      All profile information is public to registered users of this site.
