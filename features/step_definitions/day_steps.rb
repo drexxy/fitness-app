@@ -5,7 +5,6 @@ Given("they are on the new day page") do
 end
 
 Given("they click on the form to add exercises to the day") do
-  save_and_open_page
   click_on(page.find('OL:first-child'))
 end
 

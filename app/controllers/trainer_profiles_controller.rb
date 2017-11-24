@@ -11,6 +11,7 @@ class TrainerProfilesController < ApplicationController
 
   def show
     @trainer_profile = TrainerProfile.find(params[:id])
+    @workouts = @trainer_profile.workouts
   end
 
   private
