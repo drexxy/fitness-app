@@ -6,6 +6,14 @@
 
 require 'cucumber/rails'
 require 'rack_session_access/capybara'
+require 'selenium-webdriver'
+
+Capybara.register_driver :chrome do |app|
+ chrome_binary = "/usr/bin/google-chrome"
+
+ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => { "binary" => chrome_binary, "args" => ['headless', 'disable-gpu'] })
+ Capybara::Selenium::Driver.new(app, :browser => :chrome, :desired_capabilities => capabilities)
+end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
