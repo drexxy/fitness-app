@@ -8,6 +8,7 @@ Feature: Day
     Given there are some exercises
       And they are on the new day page
       And they click on the form to add exercises to the day
+      And they fill in the form
     When they submit the form
     Then they create a day in the database
-      And they are redirected to the day show page
+      And they are redirected to the day index page

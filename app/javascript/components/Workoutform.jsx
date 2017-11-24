@@ -18,12 +18,16 @@ class WorkoutForm extends Component {
     return(
       <form action="/days" method="post">
       <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+      <label htmlFor="name">Name your Day</label>
+      <input name="day[name]"/>
         {
           this.state.selected.map((exercise, i) => {
-            var setName = "workout[set][" + i + "]";
-            var repsName = "workout[reps][" + i + "]";
+            var exerciseId = "set_exercise[exercise_id][" + i + "]";
+            var setName = "set_exercise[set][" + i + "]";
+            var repsName = "set_exercise[reps][" + i + "]";
             return <fieldset key = {i} >
                 <h4>{ exercise.name }</h4>
+                <input type="hidden" name={ exerciseId } value={ exercise.id } readOnly={true} />
                 <span>  
                   <label htmlFor="sets">Sets</label>
                   <input name={ setName }/>
@@ -35,7 +39,7 @@ class WorkoutForm extends Component {
               </fieldset>
           })
         }
-      <input type="submit"/>
+      <input type="submit" value="Submit"/>
       </form>
     )
   }

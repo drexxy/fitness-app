@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :workouts, only: [:new, :create]
 
-  resources :days, only: [:new, :create]
+  resources :days, only: [:new, :create, :index]
 
   resources :trainer_profiles, only: [:new, :create, :show]
 end

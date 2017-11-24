@@ -29,12 +29,14 @@ describe("WorkoutForm", function(){
     it("creates a form from the exercises", () => {
       expect(container.find('form').length).toEqual(1);
       expect(container.find('fieldset').length).toEqual(3);
-      expect(container.find('label').length).toEqual(6);
-      expect(container.find('input').length).toEqual(8);
+      expect(container.find('label').length).toEqual(7);
+      expect(container.find('input').length).toEqual(12);
       expect(container.find('form').childAt(0).text()).toEqual("");
-      expect(container.find('form').childAt(1).text()).toEqual("Bench PressSetsReps");
-      expect(container.find('form').childAt(2).text()).toEqual("DeadliftsSetsReps");
-      expect(container.find('form').childAt(3).text()).toEqual("SquatsSetsReps");
+      expect(container.find('form').childAt(1).text()).toEqual("Name your Day")
+      expect(container.find('form').childAt(2).text()).toEqual("")
+      expect(container.find('form').childAt(3).text()).toEqual("Bench PressSetsReps");
+      expect(container.find('form').childAt(4).text()).toEqual("DeadliftsSetsReps");
+      expect(container.find('form').childAt(5).text()).toEqual("SquatsSetsReps");
     });
   });
 })
