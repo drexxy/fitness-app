@@ -1,6 +1,21 @@
-Given("a customer is logged in") do
-  @customer = Customer.create!
-  page.set_rack_session(customer_id: @customer.id)
+Given("a customer is registered") do
+  visit new_customer_registration_path
+  fill_in 'Email', with: "ben.lifter@gmail.co.uk"
+  fill_in 'Password', with: 'password'
+  fill_in 'Password confirmation', with: 'password'
+  click_on("Sign up")
+end
+
+Given("they have confirmed their account") do
+  ctoken = ActionMailer::Base.deliveries.last.body.match(/confirmation_token=[^"]+/)
+  visit "http://localhost:3000/customers/confirmation?#{ctoken}"
+end
+
+Given("they have logged in") do
+  visit new_customer_session_path
+  fill_in 'Email', with: "ben.lifter@gmail.co.uk"
+  fill_in 'Password', with: 'password'
+  click_on("Log in")
 end
 
 Given("They are on the new profile page") do

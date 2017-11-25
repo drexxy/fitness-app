@@ -1,7 +1,9 @@
 Feature: Profile
 
   Background: 
-    Given a customer is logged in
+    Given a customer is registered
+      And they have confirmed their account
+      And they have logged in
 
   Scenario: A customer creates a profile with their information
     Given They are on the new profile page
