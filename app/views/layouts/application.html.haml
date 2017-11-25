@@ -14,9 +14,15 @@
         %nav.col.col-1-of-2
           %ol
             %li
-              = link_to "Your Profile", profile_path(1)
-            %li
               = link_to "Exercises", exercises_path
+            - if current_customer        
+              %li#logged-in
+                Logged in
+            - else 
+              %li>
+                = link_to "Log In", new_customer_session_path
+              %li>
+                = link_to "New visitor sign up!", new_customer_registration_path
       %p.notice
         = notice
       %p.alert
