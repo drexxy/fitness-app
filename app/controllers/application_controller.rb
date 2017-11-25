@@ -11,4 +11,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
+  def admin_login
+    unless session[:admin_id]
+      flash[:error] = "This area requires admin privileges"
+      redirect_to exercises_path 
+    end
+  end
+
+  
+
 end

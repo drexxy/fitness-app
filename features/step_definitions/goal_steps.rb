@@ -1,6 +1,6 @@
 Given("an admin is logged in") do
   @admin = Admin.create!
-  page.set_rack_session(customer_id: @admin.id)
+  page.set_rack_session(admin_id: @admin.id)
 end
 
 Given("they are on the new goal page") do

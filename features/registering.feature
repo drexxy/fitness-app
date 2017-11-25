@@ -7,7 +7,7 @@ Feature: Registering
   Then they will be registered but not confirmed
     And they recieve confirmation insturctions by email
   When they follow the confirmation link in the confirmation email
-  Then they'll be redirected to the new profile page
+  Then they'll be redirected to the log in page
 
   Scenario: A personal trainer signs up
     Given they are on the sign up page
@@ -17,4 +17,4 @@ Feature: Registering
   Then they will be registered but not confirmed
     And they recieve confirmation insturctions by email
   When they follow the confirmation link in the confirmation email
-  Then they'll be redirected to the new trainer profile page
+  Then they'll be redirected to the log in page

@@ -31,7 +31,6 @@ class Day extends Component {
         </div>
       </div>
   }
-
 }
 
 export default Day

@@ -6,9 +6,10 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.create!(
-      name: params[:workout][:name],
-      difficulty: params[:workout][:difficulty],
-      purpose: params[:workout][:purpose])
+        name: params[:workout][:name],
+        difficulty: params[:workout][:difficulty],
+        purpose: params[:workout][:purpose]
+      )
     params[:workout][:day_id].values.each do |id|
       day = Day.find(id)
       @workout.days.push(day)

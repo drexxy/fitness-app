@@ -26,20 +26,13 @@ When("they follow the confirmation link in the confirmation email") do
   visit "http://localhost:3000/customers/confirmation?#{ctoken}"
 end
 
-Then("they'll be redirected to the new profile page") do
-  expect(page).to have_content("Create a Profile")
-  expect(page).to have_content(
-    "All profile information is private unless you choose to share it. It is only used for filtering workout results."
-  )
-end
-
 When("they check the box to say they are a personal trainer") do
   check "customer[trainer]"
 end
 
-Then("they'll be redirected to the new trainer profile page") do
-  expect(page).to have_content("Create a Trainer Profile")
-  expect(page).to have_content(
-    "All profile information is public to registered users of this site."
-  )
+Then("they'll be redirected to the log in page") do
+  expect(page).to have_content("Log In")
+  expect(page).to have_content("Email")
+  expect(page).to have_content("Password")
 end
+
