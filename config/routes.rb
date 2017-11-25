@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :customers, controllers: { confirmations: 'confirmations' }
   
   resources :profiles, only: [:new, :create, :show]
 
@@ -11,4 +13,6 @@ Rails.application.routes.draw do
   resources :days, only: [:new, :create, :index]
 
   resources :trainer_profiles, only: [:new, :create, :show]
+
+  root to: 'exercises#index'
 end
