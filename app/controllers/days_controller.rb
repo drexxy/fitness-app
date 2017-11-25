@@ -25,7 +25,10 @@ class DaysController < ApplicationController
 
   def index
     @days = Day.limit(20).offset(0).includes(:set_exercises).includes(:exercises)
-    @days = @days.to_json(include: { set_exercises: {include: :exercise }})
+    @days = @days.to_json(
+      except: [:created_at, :updated_at], include: {
+      set_exercises: { except: [:created_at, :updated_at], include: {
+      exercise: {except: [:created_at, :updated_at, :description]}}}})
   end
 
 end

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import WorkoutForm from './Workoutform'
+import DayForm from './Dayform'
 import ItemList from './Itemlist'
 import 'babel-polyfill';
 
-class Workout extends Component {
+class Day extends Component {
 
   constructor(props){
     super(props);
@@ -14,7 +14,7 @@ class Workout extends Component {
   }
 
   handleClick(i){
-    this.state.selected.push(this.props.items[i])
+    this.state.selected.push(this.props.exercises[i])
     this.setState({
       selected: this.state.selected
     })
@@ -23,15 +23,15 @@ class Workout extends Component {
 
   render(){
     return <div className="grid">
-        <div className="workout-list col col-3-of-4">
-          <WorkoutForm selected = { this.state.selected } />
+        <div className="day-list col col-3-of-4">
+          <DayForm selected = { this.state.selected } />
         </div>
-        <div className="day-list col col-1-of-4">
-          <ItemList items = { this.props.items } handleClick = { this.handleClick } /> 
+        <div className="exercise-list col col-1-of-4">
+          <ItemList items = { this.props.exercises } handleClick = { this.handleClick } /> 
         </div>
       </div>
   }
 
 }
 
-export default Workout
+export default Day

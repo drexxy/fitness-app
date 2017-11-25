@@ -13,7 +13,7 @@ Given("they click on the form to add exercises to the day") do
 end
 
 Given("they fill in the form") do
-  within(".workout-list") do
+  within(".day-list") do
     fill_in "day[name]", with: "Awesome Chest Day"
     fill_in "set_exercise[set][0]", with: 5
     fill_in "set_exercise[reps][0]", with: "12, 10, 8, 6, 4"

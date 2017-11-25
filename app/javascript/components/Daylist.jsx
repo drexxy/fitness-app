@@ -13,8 +13,8 @@ class DayList extends Component {
 
   render(){
     return(
-      <div>
-        <MuiThemeProvider>
+      <MuiThemeProvider>
+        <div>
           {
             this.state.days.map((day, i) => {
               return (
@@ -36,11 +36,10 @@ class DayList extends Component {
               )
             })
           }
-        </MuiThemeProvider>
-      </div>
+        </div>
+      </MuiThemeProvider>
     )
   }
-
 }
 
 export default DayList

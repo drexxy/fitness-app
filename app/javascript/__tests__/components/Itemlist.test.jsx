@@ -6,16 +6,16 @@ configure({ adapter: new Adapter() });
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
-import ExerciseList from '../../components/Exerciselist';
+import ItemList from '../../components/Itemlist';
 
-describe("ExerciseList", function(){
-  let exercises;
+describe("ItemList", function(){
+  let items;
 
   beforeEach(() => {
-    exercises = [
-      {"name": "Bench Press", "muscleGroup": "Chest" },
-      {"name": "Deadlifts", "muscleGroup": "Back" },
-      {"name": "Squats", "muscleGroup": "Legs" },
+    items = [
+      {"name": "Bench Press",},
+      {"name": "Deadlifts"},
+      {"name": "Squats"},
       ];
   });
 
@@ -23,10 +23,10 @@ describe("ExerciseList", function(){
     let container;
 
     beforeEach(() => {
-      container = mount(<ExerciseList exercises={ exercises }/>);
+      container = mount(<ItemList items={ items }/>);
     });
 
-    it("creates a ol of exercises", () => {
+    it("creates a ol of items", () => {
       expect(container.find('ol').length).toEqual(1);
       expect(container.find('li').length).toEqual(3);
       expect(container.find('ol').childAt(0).text()).toEqual("Bench Press");
@@ -34,7 +34,7 @@ describe("ExerciseList", function(){
       expect(container.find('ol').childAt(2).text()).toEqual("Squats");
     })
     
-    describe("adding an exercise to the workout", function(){
+    describe("adding an item to a form", function(){
       beforeEach(() => {
         container.find('ol').childAt(0).simulate("click");
       });

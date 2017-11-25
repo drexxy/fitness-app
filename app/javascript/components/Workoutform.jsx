@@ -16,26 +16,27 @@ class WorkoutForm extends Component {
       var token = "123456"
     }
     return(
-      <form action="/days" method="post">
+      <form action="/workouts" method="post">
       <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
-      <label htmlFor="name">Name your Day</label>
-      <input name="day[name]"/>
+      <label htmlFor="name">Name your Workout</label>
+      <input name="workout[name]"/>
+      <label htmlFor="difficulty">Select how difficult this workout is</label>
+      <select name="workout[difficulty]">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <label htmlFor="purpose">Choose the most appropriate tag</label>
+      <select name="workout[purpose]">
+        <option value="put on muscle">Put on Muscle</option>
+        <option value="lose weight">Lose Weight</option>
+      </select>
         {
-          this.state.selected.map((exercise, i) => {
-            var exerciseId = "set_exercise[exercise_id][" + i + "]";
-            var setName = "set_exercise[set][" + i + "]";
-            var repsName = "set_exercise[reps][" + i + "]";
+          this.state.selected.map((day, i) => {
+            var dayId = "workout[day_id][" + i + "]";
             return <fieldset key = {i} >
-                <h4>{ exercise.name }</h4>
-                <input type="hidden" name={ exerciseId } value={ exercise.id } readOnly={true} />
-                <span>  
-                  <label htmlFor="sets">Sets</label>
-                  <input name={ setName }/>
-                </span>
-                <span>
-                  <label htmlFor="reps">Reps</label>
-                  <input name={ repsName }/>
-                </span>
+                <h4>{ day.name }</h4>
+                <input type="hidden" name={ dayId } value={ day.id } readOnly={true} />
               </fieldset>
           })
         }
