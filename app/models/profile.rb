@@ -16,4 +16,6 @@ class Profile < ApplicationRecord
   mount_uploader :profile_picture, ProfilePictureUploader
 
   belongs_to :goal, optional: true
+
+  belongs_to :customer
 end

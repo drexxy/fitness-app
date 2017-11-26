@@ -1,5 +1,7 @@
 class DaysController < ApplicationController
 
+  before_action :trainer_login
+
   def new
     @exercises = Exercise.all
   end

@@ -1,5 +1,7 @@
 class GoalsController < ApplicationController
 
+  before_action :admin_login
+
   def new
     @goal = Goal.new
   end

@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  
+  before_action :customer_login, except: [:show]
 
   def new
     unless @profile
@@ -16,13 +18,14 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find_by(customer_id: current_customer.id)
   end
 
   private
 
   def profile_params
     params.require(:profile).permit(
+      :customer_id,
       :display_name,
       :goal_id,
       :days,

@@ -1,5 +1,3 @@
-
-
 Given("they are on the new day page") do
   visit new_day_path
 end

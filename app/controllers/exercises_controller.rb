@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
 
-  before_action :admin_login, except: [:index]
+  before_action :admin_login, except: [:index, :show]
 
   def new
     @exercise = Exercise.new

@@ -1,5 +1,7 @@
 class TrainerProfilesController < ApplicationController
 
+  before_action :trainer_login
+
   def new
     @trainer_profile = TrainerProfile.new
   end
@@ -18,6 +20,7 @@ class TrainerProfilesController < ApplicationController
 
   def trainer_profile_params
     params.require(:trainer_profile).permit(
+      :customer_id,
       :name,
       :gym_name,
       :gym_postcode,

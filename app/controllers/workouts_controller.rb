@@ -1,5 +1,7 @@
 class WorkoutsController < ApplicationController
 
+  before_action :trainer_login, except: [:index, :show]
+
   def new
     @days = Day.all
   end

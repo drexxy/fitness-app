@@ -1,3 +1,12 @@
+Given("a personal trainer is registered") do
+  visit new_customer_registration_path
+  fill_in 'Email', with: "ben.lifter@gmail.co.uk"
+  fill_in 'Password', with: 'password'
+  fill_in 'Password confirmation', with: 'password'
+  check "customer[trainer]"
+  click_on("Sign up")
+end
+
 Given("they are on the new trainer profile page") do
   visit new_trainer_profile_path
 end
@@ -32,7 +41,7 @@ Then("they are redirected to their profile page") do
 end
 
 Given("the trainer has a profile") do
-  @profile = TrainerProfile.create!
+  @profile = TrainerProfile.create!(customer_id: Customer.last.id)
 end
 
 Given("they have created some workouts") do

@@ -1,7 +1,9 @@
 Feature: Day
 
   Background:
-    Given a personal trainer is logged in
+    Given a personal trainer is registered
+      And they have confirmed their account
+      And they have logged in
 
   @javascript
   Scenario: A personal trainer creates a day of exercises

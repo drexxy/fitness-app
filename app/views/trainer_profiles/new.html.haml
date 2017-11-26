@@ -3,6 +3,7 @@
 
   .col.col-1-of-2
     = form_for @trainer_profile do |f|
+      =f.hidden_field :customer_id, value: current_customer.id
       %fieldset
         = f.label :name
         = f.text_field :name

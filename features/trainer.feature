@@ -1,7 +1,9 @@
 Feature: Trainer
 
   Background: 
-    Given a personal trainer is logged in
+    Given a personal trainer is registered
+      And they have confirmed their account
+      And they have logged in
 
   Scenario: A trainer creates a profile
     Given they are on the new trainer profile page

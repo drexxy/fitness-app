@@ -20,6 +20,19 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def customer_login
+    unless current_customer
+      flash[:error] = "You must sign in"
+      redirect_to new_customer_session_path 
+    end
+  end
+
+  def trainer_login
+    unless current_customer && current_customer.trainer
+      flash[:error] = "You must sign in as a personal trainer"
+      redirect_to new_customer_session_path 
+    end
+  end
   
 
 end

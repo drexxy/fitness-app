@@ -7,8 +7,7 @@ Given("a customer is registered") do
 end
 
 Given("they have confirmed their account") do
-  ctoken = ActionMailer::Base.deliveries.last.body.match(/confirmation_token=[^"]+/)
-  visit "http://localhost:3000/customers/confirmation?#{ctoken}"
+  Customer.first.confirm
 end
 
 Given("they have logged in") do
