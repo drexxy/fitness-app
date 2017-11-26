@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   before_action :trainer_login, except: [:index, :show]
 
   def new
-    @days = Day.all
+    @days = Day.where(trainer_profile_id: current_customer_profile.id)
   end
 
   def create

@@ -3,11 +3,20 @@ class DaysController < ApplicationController
   before_action :trainer_login
 
   def new
-    @exercises = Exercise.all
+    if current_customer_profile
+      @exercises = Exercise.all
+    else
+      flash[:notice] = "You must create a profile first"
+      redirect_to new_trainer_profile_path
+    end
   end
 
   def create
-    @day = Day.create!(name: params[:day][:name])
+    @day = Day.create!(
+      name: params[:day][:name],
+      trainer_profile_id: current_customer_profile.id
+    )
+
     sets = params[:set_exercise][:set].values
     reps = params[:set_exercise][:reps].values
     exercises = params[:set_exercise][:exercise_id].values
@@ -26,7 +35,8 @@ class DaysController < ApplicationController
   end
 
   def index
-    @days = Day.limit(20).offset(0).includes(:set_exercises).includes(:exercises)
+    @days = Day.where(
+      trainer_profile_id: current_customer_profile.id).limit(20).offset(0).includes(:set_exercises).includes(:exercises)
     @days = @days.to_json(
       except: [:created_at, :updated_at], include: {
       set_exercises: { except: [:created_at, :updated_at], include: {
