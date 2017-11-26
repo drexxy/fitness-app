@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def customer_login
-    unless current_customer
+    unless current_customer && current_customer.trainer == false
       flash[:error] = "You must sign in"
       redirect_to new_customer_session_path 
     end
