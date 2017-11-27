@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1511545631081" clover="3.2.0">
-  <project timestamp="1511545631081" name="All files">
-    <metrics statements="25" coveredstatements="22" conditionals="8" coveredconditionals="5" methods="14" coveredmethods="12" elements="47" coveredelements="39" complexity="0" loc="25" ncloc="25" packages="1" files="4" classes="4">
+<coverage generated="1511803789415" clover="3.2.0">
+  <project timestamp="1511803789415" name="All files">
+    <metrics statements="62" coveredstatements="49" conditionals="14" coveredconditionals="7" methods="31" coveredmethods="26" elements="107" coveredelements="82" complexity="0" loc="62" ncloc="62" packages="1" files="7" classes="7">
+      <file name="Day.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Day.jsx">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+      <file name="Dayform.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Dayform.jsx">
+        <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+      </file>
       <file name="Daylist.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Daylist.jsx">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
         <line num="8" count="2" type="stmt"/>
@@ -10,11 +32,37 @@
         <line num="20" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
       </file>
-      <file name="Exerciselist.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Exerciselist.jsx">
+      <file name="Gymmap.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Gymmap.jsx">
+        <metrics statements="23" coveredstatements="16" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="9"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="64" count="7" type="stmt"/>
+        <line num="79" count="11" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+      </file>
+      <file name="Itemlist.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Itemlist.jsx">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
       </file>
       <file name="Workout.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Workout.jsx">
@@ -27,17 +75,15 @@
         <line num="25" count="1" type="stmt"/>
       </file>
       <file name="Workoutform.jsx" path="/home/benjamin/Projects/final_project/fitness-app/app/javascript/components/Workoutform.jsx">
-        <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
       </file>
     </metrics>
   </project>

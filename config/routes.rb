@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :days, only: [:new, :create, :index]
 
+  resources :gyms, only: [:index]
+
   resources :trainer_profiles, only: [:new, :create, :show]
 
   root to: 'exercises#index'
