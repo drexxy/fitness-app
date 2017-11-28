@@ -7,7 +7,6 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
     %link{ :href =>"https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz", :rel => "stylesheet" }
-    %script{ :src => "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google[:maps][:api_key]}&libraries=places" }
   %body
     %header
       .grid

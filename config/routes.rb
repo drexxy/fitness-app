@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :customers, controllers: { confirmations: 'confirmations' }
   
-  resources :profiles, only: [:new, :create, :show]
-
+  resources :profiles, only: [:new, :create, :show] do
+    member do
+      get :matches
+    end
+  end
+    
   resources :goals, only: [:new, :create]
 
   resources :exercises, only: [:new, :create, :show, :index]

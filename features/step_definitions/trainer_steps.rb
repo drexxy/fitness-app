@@ -45,9 +45,9 @@ Given("the trainer has a profile") do
 end
 
 Given("they have created some workouts") do
-  @workout_1 = Workout.create!(name: "Chest Explosion", difficulty: "Hard", purpose: "Gain Muscle", trainer_profile_id: @profile.id)
-  @workout_2 = Workout.create!(name: "Weight Shifter", difficulty: "Easy", purpose: "Lose Weight", trainer_profile_id: @profile.id)
-  @workout_3 = Workout.create!(name: "Back Attack", difficulty: "Medium", purpose: "Gain Muscle", trainer_profile_id: @profile.id)
+  @workout_1 = Workout.create!(name: "Chest Explosion", difficulty: "Expert", purpose: "Gain Muscle", trainer_profile_id: @profile.id)
+  @workout_2 = Workout.create!(name: "Weight Shifter", difficulty: "Beginner", purpose: "Lose Weight", trainer_profile_id: @profile.id)
+  @workout_3 = Workout.create!(name: "Back Attack", difficulty: "Intermediate", purpose: "Gain Muscle", trainer_profile_id: @profile.id)
 end
 
 When("they view their profile page") do
@@ -55,8 +55,8 @@ When("they view their profile page") do
 end
 
 Then("they see a list of their workouts") do
-  expect(page).to have_content("Name: Chest Explosion Difficulty: Hard  Purpose: Gain Muscle" )
-  expect(page).to have_content("Name: Weight Shifter Difficulty: Easy Purpose: Lose Weight" )
-  expect(page).to have_content("Name: Back Attack Difficulty: Medium Purpose: Gain Muscle" )
+  expect(page).to have_content("Name: Chest Explosion Difficulty: Expert  Purpose: Gain Muscle" )
+  expect(page).to have_content("Name: Weight Shifter Difficulty: Beginner Purpose: Lose Weight" )
+  expect(page).to have_content("Name: Back Attack Difficulty: Intermediate Purpose: Gain Muscle" )
 end
 

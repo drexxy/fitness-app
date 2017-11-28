@@ -22,14 +22,14 @@ class WorkoutForm extends Component {
       <input name="workout[name]"/>
       <label htmlFor="difficulty">Select how difficult this workout is</label>
       <select name="workout[difficulty]">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Expert">Expert</option>
       </select>
       <label htmlFor="purpose">Choose the most appropriate tag</label>
       <select name="workout[purpose]">
-        <option value="put on muscle">Put on Muscle</option>
-        <option value="lose weight">Lose Weight</option>
+        <option value="Put on muscle">Put on Muscle</option>
+        <option value="Lose weight">Lose Weight</option>
       </select>
         {
           this.state.selected.map((day, i) => {

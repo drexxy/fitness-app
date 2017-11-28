@@ -10,7 +10,7 @@ end
 
 Given("they have filled out the workout form") do
   fill_in "workout[name]", with: "Ben's Ultimate Workout"
-  select "Hard", from: "workout[difficulty]"
+  select "Expert", from: "workout[difficulty]"
   select "Put on Muscle", from: "workout[purpose]"
 end
 
@@ -24,8 +24,8 @@ end
 
 Then("a workout is created") do
   expect(Workout.last.name).to eq("Ben's Ultimate Workout")
-  expect(Workout.last.difficulty).to eq("hard")
-  expect(Workout.last.purpose).to eq("put on muscle")
+  expect(Workout.last.difficulty).to eq("Expert")
+  expect(Workout.last.purpose).to eq("Put on muscle")
   expect(Workout.last.days.length).to eq(3)
 end
 

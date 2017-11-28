@@ -1,2 +1,4 @@
 .grid
   = react_component("Gymmap")
+
+%script{ :src => "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google[:maps][:api_key]}&libraries=places" }

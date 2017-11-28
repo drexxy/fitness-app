@@ -36,7 +36,7 @@ describe("WorkoutForm", function(){
       expect(container.find('form').childAt(1).text()).toEqual("Name your Workout")
       expect(container.find('form').childAt(2).text()).toEqual("")
       expect(container.find('form').childAt(3).text()).toEqual("Select how difficult this workout is");
-      expect(container.find('form').childAt(4).text()).toEqual("EasyMediumHard");
+      expect(container.find('form').childAt(4).text()).toEqual("BeginnerIntermediateExpert");
       expect(container.find('form').childAt(5).text()).toEqual("Choose the most appropriate tag");
       expect(container.find('form').childAt(6).text()).toEqual("Put on MuscleLose Weight");
       expect(container.find('form').childAt(7).text()).toEqual("Chest Day");

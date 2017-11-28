@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
       day = Day.find(id)
       @workout.days.push(day)
     end
+    @workout.day_count = @workout.days.length
     @workout.save
   end
 
