@@ -1,6 +1,6 @@
 .grid
 
-  .col.col-1-of-2.both-gutter
+  .col.col-1-of-4.both-gutter.profile-pic
     - unless @profile.profile_picture.url == nil
       = image_tag @profile.profile_picture.url
     - else
@@ -9,39 +9,39 @@
         =link_to "Upload a profile picture"
     
 
-  .col.col-1-of-2.both-gutter
+  .col.col-1-of-4.both-gutter.profile
     %dl
-      %dd 
+      %dd> 
         Name:
-      %dt 
+      %dt> 
         = @profile.display_name
-      %dd
+      %dd>
         Goal:
-      %dt
+      %dt>
         - if @profile.goal
           = @profile.goal.name
         - else
           You haven't chosen a Goal yet. Set one here:
           = link_to "Set a Goal!"
-      %dd
+      %dd>
         Days per week:
-      %dt
+      %dt>
         - if @profile.days
           = @profile.days
         - else
           You haven't set your days yet. Change that here:
           = link_to "Edit your profile"
-      %dd
+      %dd>
         Experience:
-      %dt
+      %dt>
         - if @profile.experience
           = @profile.experience
         - else
           You haven't set your experience yet. Change that here:
           = link_to "Edit your profile"
-      %dd
+      %dd>
         Weight:
-      %dt
+      %dt>
         - if @profile.weight
           = @profile.weight
         - else
@@ -49,5 +49,5 @@
           = link_to "Edit your profile"
 
 .grid
-  .col
+  .col.workout
     = link_to "Find a Workout", matches_profile_path

@@ -1,5 +1,5 @@
 .grid
-  .col.col-1-of-3.trainer-profile  
+  .col.col-1-of-3.trainer-profile.both-gutter  
     %dl
       %dt>
         Name:
@@ -25,5 +25,10 @@
         Bio:
       %dd>
         = @trainer_profile.bio
-  .col.col-1-of-3.workout_list
-    =render @workouts
+  .col.col-1-of-3.workout-list.both-gutter
+    = react_component("Workoutlist", { workouts: @workouts })
+  .col.col-1-of-3.create-workout.both-gutter
+    %h4
+      Create Workouts by creating days of exercises and combining them to create a workout.
+    =link_to "Make some Days", new_day_path
+    =link_to "Make a Workout", new_workout_path

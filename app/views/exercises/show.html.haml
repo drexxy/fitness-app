@@ -1,11 +1,14 @@
-%h2
-  = @exercise.name
+.grid.exercise-show 
+  %h2
+    = @exercise.name
+  .col.col-1-of-2  
+    %h3
+      = @exercise.muscle_group
 
-%h3
-  = @exercise.muscle_group
-
-%h4
-  = @exercise.category
-
-%p
-  =@exercise.description
+    %h4
+      = @exercise.category
+      
+    = link_to "<<Back", exercises_path
+  .col.col-1-of-2  
+    %p
+      =@exercise.description

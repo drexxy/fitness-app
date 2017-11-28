@@ -1,37 +1,4 @@
-.day-list {
-  form {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    margin-top: 20px;
-    fieldset {
-      display: inline-block;
-      text-align: left;
-      width: 75%;
-      border: 1px solid black;
-      padding: 20px;
-      h4 {
-        font-size: 1.5rem;
-        display: inline-block;
-        width: 25%;
-      }
-      span {
-        width: 20%;
-        font-size: 1.5rem;
-        margin-left: 30px;
-        input {
-          width: 50px;
-          margin-left: 20px;
-        }
-      }
-      span:last-child {
-        input { 
-          width: 100px;
-        }
-      }
-    }
-  }
-}
-
-.exercise-list {
+.day-workout-list {
   ol {
     text-align: left;
     font-size: 1.3rem;
@@ -55,13 +22,24 @@
 
 }
 
-#day-name-label{
+.workout-form-label{
   font-size: 1.5rem;
   margin-right: 10px; 
 }
 
-#day-name {
+.workout-form {
   font-size: 1.3rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.workout-form-item {
+  font-size: 1.5rem;
+  display: inline-block;
+  text-align: left;
+  width: 75%;
+  border: 1px solid black;
+  padding: 20px;
 }
 
 .form-button {

@@ -7,17 +7,27 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
     %link{ :href =>"https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz", :rel => "stylesheet" }
+    %link{ :href => "https://fonts.googleapis.com/css?family=Roboto:300,400,500", :rel => "stylesheet" }
   %body
     %header
       .grid
-        %h1.col.col-1-of-2 Fitness Faster
+        %h1.col.col-1-of-2 Workout Finder
         %nav.col.col-1-of-2
           %ol
-            %li
+            %li>
               = link_to "Exercises", exercises_path
+            %li>
+              = link_to "Find a Gym", gyms_path
             - if current_customer        
-              %li#logged-in
-                Logged in
+              %li#logged-in>
+                -if current_customer.trainer
+                  =link_to "Your Profile", trainer_profile_path(current_customer_profile.id)
+                -else
+                  =link_to "Your Profile", profile_path(1)
+              %li#logged-in>
+                %p Logged in
+              %li#logged-in>
+                =link_to "Log Out", destroy_customer_session_path
             - else 
               %li>
                 = link_to "Log In", new_customer_session_path

@@ -18,8 +18,8 @@ class DayForm extends Component {
     return(
       <form action="/days" method="post">
       <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
-      <label htmlFor="name">Name your Day</label>
-      <input name="day[name]"/>
+      <label id="day-name-label" htmlFor="name">Name your Day</label>
+      <input id="day-name" name="day[name]"/>
         {
           this.state.selected.map((exercise, i) => {
             var exerciseId = "set_exercise[exercise_id][" + i + "]";
@@ -39,7 +39,7 @@ class DayForm extends Component {
               </fieldset>
           })
         }
-      <input type="submit" value="Submit"/>
+      <input className="form-button" type="submit" value="Submit"/>
       </form>
     )
   }

@@ -10,7 +10,8 @@ class WorkoutsController < ApplicationController
     @workout = Workout.create!(
         name: params[:workout][:name],
         difficulty: params[:workout][:difficulty],
-        purpose: params[:workout][:purpose]
+        purpose: params[:workout][:purpose],
+        trainer_profile_id: current_customer_profile.id
       )
     params[:workout][:day_id].values.each do |id|
       day = Day.find(id)

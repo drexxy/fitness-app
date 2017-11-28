@@ -23,10 +23,10 @@ class Workout extends Component {
 
   render(){
     return <div className="grid">
-        <div className="workout-list col col-3-of-4">
+        <div className="workout-form col col-3-of-4">
           <WorkoutForm selected = { this.state.selected } />
         </div>
-        <div className="day-list col col-1-of-4">
+        <div className="day-workout-list col col-1-of-4">
           <ItemList items = { this.props.items } handleClick = { this.handleClick } /> 
         </div>
       </div>
