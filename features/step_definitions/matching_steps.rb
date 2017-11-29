@@ -48,3 +48,16 @@ Then("they are shown a list of workouts that fufill their criteria") do
   expect(page).to have_no_content("Workout 3")
   expect(page).to have_no_content("Workout 4")
 end
+
+Given("they are viewing the workout matching page") do
+  visit matches_profile_path(Customer.first.id)
+end
+
+When("they click to select a workout") do
+  click_on("Select Workout") 
+end
+
+Then("their choice of workout appears on their profile page") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+

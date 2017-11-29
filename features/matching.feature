@@ -14,3 +14,9 @@ Feature: Matching
     Given they are viewing their profile
     When they click on the Find Workouts Button
     Then they are shown a list of workouts that fufill their criteria
+
+  @javascript
+  Scenario: A customer sets a workout as their current workout
+    Given they are viewing the workout matching page
+    When they click to select a workout
+    Then their choice of workout appears on their profile page  
