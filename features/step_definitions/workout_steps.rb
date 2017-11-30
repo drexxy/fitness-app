@@ -1,7 +1,10 @@
 Given("the personal trainer has created some days") do
-  @day_1 = Day.create!(name: "Chest Day", trainer_profile_id: TrainerProfile.first.id, set_exercises_attributes: [{sets: 5, reps: "6", exercise_id: Exercise.first.id}])
-  @day_2 = Day.create!(name: "Back Day", trainer_profile_id: TrainerProfile.first.id, set_exercises_attributes: [{sets: 5, reps: "8", exercise_id: Exercise.second.id}])
-  @day_3 = Day.create!(name: "Leg Day", trainer_profile_id: TrainerProfile.first.id, set_exercises_attributes: [{sets: 5, reps: "10", exercise_id: Exercise.third.id}])
+  @day_1 = Day.create!(name: "Chest Day", trainer_profile_id: TrainerProfile.first.id)
+  @day_2 = Day.create!(name: "Back Day", trainer_profile_id: TrainerProfile.first.id)
+  @day_3 = Day.create!(name: "Leg Day", trainer_profile_id: TrainerProfile.first.id)
+  @set_exercise_1 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: @day_1.id)
+  @set_exercise_2 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: @day_2.id)
+  @set_exercise_3 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: @day_3.id)
 end
 
 Given("they are on the new workout page") do
@@ -41,7 +44,8 @@ Given("another trainer has created a day") do
     bio: "Been training for 4 years, I look great",
     customer_id: Customer.last.id 
     )
-  @day_3 = Day.create!(name: "Arms Day", trainer_profile_id: TrainerProfile.last.id, set_exercises_attributes: [{sets: 5, reps: "10", exercise_id: Exercise.third.id}])
+  @day_4 = Day.create!(name: "Arms Day", trainer_profile_id: TrainerProfile.last.id)
+  @set_exercise_4 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.last.id, day_id: @day_4.id)
 end
 
 

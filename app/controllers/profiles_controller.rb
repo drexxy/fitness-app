@@ -30,13 +30,13 @@ class ProfilesController < ApplicationController
       current_customer_profile.goal.name,
       current_customer_profile.experience,
       current_customer_profile.days
-    ).limit(5).offset(0).includes(:days)
-  
+    ).limit(5).offset(0).includes(:days).includes(:set_exercises).includes(:exercises)
+
     @workouts = @workouts.to_json(
       except: [:created_at, :updated_at], include: {
-        days:{ except: [:created_at, :updated_at], include: {
-      set_exercises: { except: [:created_at, :updated_at], include: {
-      exercise: {except: [:created_at, :updated_at, :description]}}}}}}
+        days:{ only: [:name], include: {
+      set_exercises: { only: [:sets, :reps], include: {
+      exercise: {only: [:name]}}}}}}
       )
   
   end

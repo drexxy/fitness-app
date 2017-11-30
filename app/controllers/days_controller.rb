@@ -38,9 +38,9 @@ class DaysController < ApplicationController
     @days = Day.where(
       trainer_profile_id: current_customer_profile.id).limit(20).offset(0).includes(:set_exercises).includes(:exercises)
     @days = @days.to_json(
-      except: [:created_at, :updated_at], include: {
-      set_exercises: { except: [:created_at, :updated_at], include: {
-      exercise: {except: [:created_at, :updated_at, :description]}}}})
+      only: [:name], include: {
+      set_exercises: { only: [:sets, :reps], include: {
+      exercise: {only: [:name]}}}})
   end
 
 end

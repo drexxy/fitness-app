@@ -24,8 +24,13 @@ Given("there are some workouts") do
     )
 
   4.times do
-    Day.create!(name: "Chest Day", trainer_profile_id: TrainerProfile.first.id, set_exercises_attributes: [{sets: 5, reps: "6", exercise_id: Exercise.first.id}])
+    Day.create!(name: "Chest Day", trainer_profile_id: TrainerProfile.first.id)
   end
+
+  @set_exercise_1 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: Day.first.id)
+  @set_exercise_2 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: Day.second.id)
+  @set_exercise_3 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: Day.third.id)
+  @set_exercise_3 = SetExercise.create!(sets: 5, reps: "6", exercise_id: Exercise.first.id, day_id: Day.fourth.id)
 
   @workout_1 = Workout.create!(name:"Workout 1", difficulty: "Beginner", purpose: "Lose weight", day_count: 4, days: [Day.first, Day.second, Day.third, Day.fourth])
   @workout_2 = Workout.create!(name:"Workout 2", difficulty: "Expert", purpose: "Put on muscle", day_count: 4, days: [Day.first, Day.second, Day.third, Day.fourth]) 
