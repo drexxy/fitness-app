@@ -50,10 +50,12 @@ class WorkoutList extends Component {
                       />
                     </List>
                   </div>
-                  <div className= "col col-1-of-3 workout-select">
-                    <a href={"workout/" + workout.id }>Select Workout</a>
-                  </div>
-                </div>  
+                  <form className="col col-1-of-3" action="/profiles/1/workouts" method="PUT">
+                    <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+                    <input type="hidden" name="workout_id" value={workout.id} readOnly={true} />
+                    <input type="submit" value="Select Workout"/>
+                  </form> 
+                </div>   
               )
             })
           }

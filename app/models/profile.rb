@@ -18,4 +18,6 @@ class Profile < ApplicationRecord
   belongs_to :goal, optional: true
 
   belongs_to :customer
+
+  belongs_to :workout, optional: true
 end

@@ -14,13 +14,6 @@ class TrainerProfilesController < ApplicationController
   def show
     @trainer_profile = TrainerProfile.find(params[:id])
     @workouts = @trainer_profile.workouts
-
-    @workouts = @workouts.to_json(
-      except: [:created_at, :updated_at], include: {
-        days:{ except: [:created_at, :updated_at], include: {
-      set_exercises: { except: [:created_at, :updated_at], include: {
-      exercise: {except: [:created_at, :updated_at, :description]}}}}}}
-    )
   end
 
   private

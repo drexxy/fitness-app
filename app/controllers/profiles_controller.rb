@@ -18,7 +18,10 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find_by(customer_id: current_customer.id)
+    @profile = Profile.find_by(customer_id: current_customer.id)  
+    if @profile.workout_id
+      @workout = @profile.workout
+    end
   end
 
   def matches
@@ -36,6 +39,13 @@ class ProfilesController < ApplicationController
       exercise: {except: [:created_at, :updated_at, :description]}}}}}}
       )
   
+  end
+
+  def workouts
+    @profile = current_customer_profile
+    @profile.workout_id = params[:workout_id]
+    @profile.save
+    redirect_to(profile_path(current_customer_profile.id))
   end
 
   private

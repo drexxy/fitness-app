@@ -42,7 +42,6 @@ When("they click on the Find Workouts Button") do
 end
 
 Then("they are shown a list of workouts that fufill their criteria") do
-  save_and_open_page
   expect(page).to have_content("Workout 1")
   expect(page).to have_no_content("Workout 2")
   expect(page).to have_no_content("Workout 3")
@@ -58,6 +57,6 @@ When("they click to select a workout") do
 end
 
 Then("their choice of workout appears on their profile page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Workout 1")
 end
 

@@ -1,6 +1,5 @@
 .trainer-profile {
   font-size: 1.6rem;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
 
   dl {
     dd{
@@ -16,6 +15,33 @@
       text-align: left;
       margin-top: 20px;
     }
+  }
+}
+
+.workouts {
+  font-size: 1.6rem;
+
+  dl {
+    border-bottom: 2px solid black;
+
+    dd{
+      display: inline-block;
+      width: 50%;
+      text-align: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    dt{
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      text-align: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  dl:last-child{
+    border: 0
   }
 }
 

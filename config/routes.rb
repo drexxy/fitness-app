@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:new, :create, :show] do
     member do
       get :matches
+      get :workouts
     end
   end
     

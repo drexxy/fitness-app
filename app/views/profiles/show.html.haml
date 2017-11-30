@@ -50,4 +50,7 @@
 
 .grid
   .col.workout
-    = link_to "Find a Workout", matches_profile_path
+    -if @workout
+      = render @workout
+    -else
+      = link_to "Find a Workout", matches_profile_path

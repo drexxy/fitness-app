@@ -23,7 +23,7 @@ describe("WorkoutList", function(){
     });
 
     it("creates a list of workouts", () => {
-      expect(container.find('div').length).toEqual(7);
+      expect(container.find('div').length).toEqual(10);
       expect(container.find('button').length).toEqual(1);
       expect(container.find('span').length).toEqual(1);
     })
@@ -34,7 +34,7 @@ describe("WorkoutList", function(){
       })
 
       it("expands the list to show the days from the workout", () =>{
-        expect(container.find('div').length).toEqual(13);
+        expect(container.find('div').length).toEqual(16);
         expect(container.find('button').length).toEqual(2);
         expect(container.find('span').length).toEqual(2);
       })

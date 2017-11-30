@@ -18,12 +18,18 @@
               = link_to "Exercises", exercises_path
             %li>
               = link_to "Find a Gym", gyms_path
-            - if current_customer        
+            - if current_customer      
               %li#logged-in>
                 -if current_customer.trainer
-                  =link_to "Your Profile", trainer_profile_path(current_customer_profile.id)
+                  -if current_customer_profile
+                    =link_to "Your Profile", trainer_profile_path(current_customer_profile.id)
+                  -else
+                    =link_to "Create a Profile", new_trainer_profile_path
                 -else
-                  =link_to "Your Profile", profile_path(1)
+                  -if current_customer_profile
+                    =link_to "Your Profile", profile_path(current_customer_profile.id)
+                  -else
+                    =link_to "Create a Profile", new_profile_path
               %li#logged-in>
                 %p Logged in
               %li#logged-in>

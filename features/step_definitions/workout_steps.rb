@@ -15,7 +15,7 @@ Given("they have filled out the workout form") do
 end
 
 Given("they click on some days") do
-  within(".day-list") do
+  within(".day-workout-list") do
     page.find('LI:nth-child(1)').click
     page.find('LI:nth-child(2)').click
     page.find('LI:nth-child(3)').click
