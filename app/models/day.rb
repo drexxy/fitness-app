@@ -1,9 +1,9 @@
 class Day < ApplicationRecord
-  has_many :set_exercises
+  has_many :set_exercises 
 
   has_many :exercises, through: :set_exercises
 
-  has_and_belongs_to_many :workouts
+  has_and_belongs_to_many :workouts, -> { includes :set_exercises}
 
   belongs_to :trainer_profile
 

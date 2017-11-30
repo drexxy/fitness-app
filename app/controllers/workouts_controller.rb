@@ -24,6 +24,6 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    @workout = Workout.find(params[:id])
+    @workout = Workout.includes(:days).includes(:set_exercises).includes(:exercises).find(params[:id])
   end
 end
