@@ -15,6 +15,8 @@
         %nav.col.col-1-of-2
           %ol
             %li>
+              = link_to "Home", root_path
+            %li>
               = link_to "Exercises", exercises_path
             %li>
               = link_to "Find a Gym", gyms_path
@@ -31,8 +33,6 @@
                   -else
                     =link_to "Create a Profile", new_profile_path
               %li#logged-in>
-                %p Logged in
-              %li#logged-in>
                 =link_to "Log Out", destroy_customer_session_path
             - else 
               %li>
@@ -43,5 +43,7 @@
         = notice
       %p.alert
         = alert
-
-    = yield
+    %main    
+      = yield
+    %footer
+      %p Exercise can lead to injury. You follow all plans listed on this website at your own risk.

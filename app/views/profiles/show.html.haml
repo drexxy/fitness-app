@@ -1,56 +1,57 @@
-.grid
+.wrapper
+  .grid
 
-  .col.col-1-of-4.both-gutter.profile-pic
-    - unless @profile.profile_picture.url == nil
-      = image_tag @profile.profile_picture.url
-    - else
-      %p
-        You haven't set a Profile Picture. Upload one here:
-        =link_to "Upload a profile picture"
-    
+    .col.col-1-of-3.both-gutter.profile-pic
+      - unless @profile.profile_picture.url == nil
+        = image_tag @profile.profile_picture.url
+      - else
+        %p
+          You haven't set a Profile Picture. Upload one here:
+          =link_to "Upload a profile picture"
+      
 
-  .col.col-1-of-4.both-gutter.profile
-    %dl
-      %dd> 
-        Name:
-      %dt> 
-        = @profile.display_name
-      %dd>
-        Goal:
-      %dt>
-        - if @profile.goal
-          = @profile.goal.name
-        - else
-          You haven't chosen a Goal yet. Set one here:
-          = link_to "Set a Goal!"
-      %dd>
-        Days per week:
-      %dt>
-        - if @profile.days
-          = @profile.days
-        - else
-          You haven't set your days yet. Change that here:
-          = link_to "Edit your profile"
-      %dd>
-        Experience:
-      %dt>
-        - if @profile.experience
-          = @profile.experience
-        - else
-          You haven't set your experience yet. Change that here:
-          = link_to "Edit your profile"
-      %dd>
-        Weight:
-      %dt>
-        - if @profile.weight
-          = @profile.weight
-        - else
-          You haven't set your weight yet. Change that here:
-          = link_to "Edit your profile"
+    .col.col-1-of-3.both-gutter.profile
+      %dl
+        %dd> 
+          Name:
+        %dt> 
+          = @profile.display_name
+        %dd>
+          Goal:
+        %dt>
+          - if @profile.goal
+            = @profile.goal.name
+          - else
+            You haven't chosen a Goal yet. Set one here:
+            = link_to "Set a Goal!"
+        %dd>
+          Days per week:
+        %dt>
+          - if @profile.days
+            = @profile.days
+          - else
+            You haven't set your days yet. Change that here:
+            = link_to "Edit your profile"
+        %dd>
+          Experience:
+        %dt>
+          - if @profile.experience
+            = @profile.experience
+          - else
+            You haven't set your experience yet. Change that here:
+            = link_to "Edit your profile"
+        %dd>
+          Weight:
+        %dt>
+          - if @profile.weight
+            = @profile.weight
+          - else
+            You haven't set your weight yet. Change that here:
+            = link_to "Edit your profile"
 
-.grid
-  .col.workout
-    -if @workout
-      = render @workout
-    -else
-      = link_to "Find a Workout", matches_profile_path
+
+    .col.col-1-of-3.workout
+      -if @workout
+        = render @workout
+      -else
+        = link_to "Find a Workout", matches_profile_path

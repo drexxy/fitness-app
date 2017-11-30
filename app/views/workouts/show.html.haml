@@ -1,0 +1,32 @@
+.grid.workout-page
+  %h3
+    = @workout.name
+  %dl
+    .col.col-1-of-3  
+      %dt
+        Difficulty:
+      %dd 
+        =@workout.difficulty
+    .col.col-1-of-3  
+      %dt
+        Purpose:
+      %dd
+        =@workout.purpose
+    .col.col-1-of-3  
+      %dt
+        Number of Days:
+      %dd
+        =@workout.day_count
+
+.grid.workout-page
+  - @workout.days.each do |day|
+    %h5
+      =day.name
+    -day.set_exercises.each do |set_exercise|
+      .col.col-1-of-4.day-workout-page 
+        =link_to "#{set_exercise.exercise.name}", exercise_path(set_exercise.exercise.id)
+      .col.col-1-of-4.day-workout-page  
+        =set_exercise.sets 
+        sets of 
+        =set_exercise.reps
+      .col.col-2-of-4

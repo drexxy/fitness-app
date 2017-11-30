@@ -1,17 +1,20 @@
-%dl
-  %dt>
-    Name:
-  %dd>
-    =workout.name
-  %dt>
-    Difficulty:
-  %dd>
-    =workout.difficulty
-  %dt>
-    Purpose:
-  %dd>
-    =workout.purpose
-  %dt>
-    Days:
-  %dd>
-    =workout.day_count
+.workout-partial
+  %dl
+    %dt>
+      Name:
+    %dd>
+      =workout.name
+    %dt>
+      Difficulty:
+    %dd>
+      =workout.difficulty
+    %dt>
+      Purpose:
+    %dd>
+      =workout.purpose
+    %dt>
+      Days:
+    %dd>
+      =workout.day_count
+
+  =link_to "View Full Workout", workout_path(workout.id)
