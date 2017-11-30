@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :exercises, only: [:new, :create, :show, :index]
 
-  resources :workouts, only: [:new, :create]
+  resources :workouts, only: [:new, :create, :show]
 
   resources :days, only: [:new, :create, :index]
 
@@ -21,5 +21,5 @@ Rails.application.routes.draw do
 
   resources :trainer_profiles, only: [:new, :create, :show]
 
-  root to: 'exercises#index'
+  root to: 'pages#index'
 end
