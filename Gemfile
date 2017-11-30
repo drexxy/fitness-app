@@ -40,6 +40,7 @@ group :test do
   gem 'rspec-rails'
   gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
