@@ -18,31 +18,35 @@
   }
 }
 
-.workouts {
+.workout-partial {
   font-size: 1.6rem;
+  border-bottom: 2px solid black;
 
-  dl {
-    border-bottom: 2px solid black;
+  dd{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  dt{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-    dd{
-      display: inline-block;
-      width: 50%;
-      text-align: left;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    dt{
-      display: inline-block;
-      width: 50%;
-      vertical-align: top;
-      text-align: left;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
+  a {
+    display: block;
+    margin-bottom: 10px;
   }
-  dl:last-child{
-    border: 0
-  }
+}
+
+
+.workout-partial:last-child {
+  border: 0;
 }
 
 .create-workout {
