@@ -12,8 +12,13 @@ class TrainerProfilesController < ApplicationController
   end
 
   def show
+    set_page
     @trainer_profile = TrainerProfile.find(params[:id])
-    @workouts = @trainer_profile.workouts
+    @limit = 3
+    @workouts = @trainer_profile.workouts.limit(@limit).offset((@limit * (@page.to_i - 1)))
+    @next_page = @page + 1
+    @prev_page = @page - 1
+    @final_page = (@workouts.count.to_f / @limit).ceil
   end
 
   private

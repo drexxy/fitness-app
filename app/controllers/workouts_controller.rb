@@ -19,6 +19,8 @@ class WorkoutsController < ApplicationController
     end
     @workout.day_count = @workout.days.length
     @workout.save
+
+    redirect_to workout_path(@workout.id)
   end
 
   def show

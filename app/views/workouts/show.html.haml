@@ -2,21 +2,26 @@
   %h3
     = @workout.name
   %dl
-    .col.col-1-of-3  
+    .col.col-1-of-4  
       %dt
         Difficulty:
       %dd 
         =@workout.difficulty
-    .col.col-1-of-3  
+    .col.col-1-of-4  
       %dt
         Purpose:
       %dd
         =@workout.purpose
-    .col.col-1-of-3  
+    .col.col-1-of-4  
       %dt
         Number of Days:
       %dd
         =@workout.day_count
+    .col.col-1-of-4  
+      %dt
+        Created by:
+      %dd
+        =@workout.trainer_profile.name
 
 .grid.workout-page
   - @workout.days.each do |day|

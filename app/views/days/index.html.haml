@@ -1,1 +1,6 @@
-= react_component("Daylist", { days: @days })
+.grid
+  = react_component("Daylist", { days: @days })
+  .col.col-1-of-2-day-linl
+    =link_to "Add a Day", new_day_path
+    =link_to "Create a Workout", new_workout_path
+    =link_to "Return to your profile", trainer_profile_path(current_customer_profile.id)

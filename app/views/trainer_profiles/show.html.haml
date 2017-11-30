@@ -27,10 +27,25 @@
         %dd>
           = @trainer_profile.bio
     .col.col-1-of-3.workouts.both-gutter
-      =render @workouts
+      -if @workouts == []
+        There are no workouts to show
+      -else
+        =render @workouts
+        #page-change.grid
+          .next-prev.col.col-1-of-2
+          - unless @prev_page == 0
+            = link_to 'Prev', trainer_profile_path(id: @trainer_profile.id, page: @prev_page, limit: @limit), id: "prev-link"
+
+            - (1..@final_page).each do |i| 
+              = link_to "#{i}", trainer_profile_path(id: @trainer_profile.id, page: i, limit: @limit), class: ("selected" if @page == i)
+
+            - unless @next_page == @final_page + 1 
+              = link_to 'Next', trainer_profile_path(id: @trainer_profile.id, page: @next_page, limit: @limit), id: "next-link"
+
     - if current_customer.trainer
       .col.col-1-of-3.create-workout.both-gutter
         %h4
           Create Workouts by creating days of exercises and combining them to create a workout.
         =link_to "Make some Days", new_day_path
+        =link_to "Review your current Days", days_path
         =link_to "Make a Workout", new_workout_path

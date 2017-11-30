@@ -14,7 +14,7 @@ class DayList extends Component {
   render(){
     return(
       <MuiThemeProvider>
-        <div>
+        <div className="col col-1-of-2 day-list-index">
           {
             this.state.days.map((day, i) => {
               return (

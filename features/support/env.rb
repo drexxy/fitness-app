@@ -7,6 +7,9 @@
 require 'cucumber/rails'
 require 'rack_session_access/capybara'
 require 'selenium-webdriver'
+require 'simplecov'
+
+SimpleCov.start
 
 Capybara.register_driver :chrome do |app|
  chrome_binary = "/usr/bin/google-chrome"
